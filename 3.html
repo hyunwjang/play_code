@@ -3,7 +3,47 @@
     <head>
         <title>Web_JaverScript</title>
         <meta charset="utf-8">
-        <!-- <link rel ='stylesheet' href ='style.css'> -->
+        <script>
+            var Body = {
+                setcolor_body:function(color){
+                    document.querySelector('body').style.color= color;
+                },
+                setbackground:function(color){
+                    document.querySelector('body').style.backgroundColor = color;
+                }
+            }
+            var Links ={
+                link_setcolor: function(color){
+                    var alist = document.querySelectorAll('a');
+                    var i = 0;
+                        while(i < alist.length){
+                            console.log(alist[i]);
+                            alist[i].style.color = color;
+                            i=i+1;
+                        }
+
+                }
+            }
+            function nightonoff(self){
+            var target = document.querySelector('body');
+                if(self.value === 'night'){
+                    Body.setbackground('black');
+                    Body.setcolor_body('white');
+                    self.value ='day';
+
+                    Links.link_setcolor('powderblue');
+                }else{
+                    
+                    Body.setbackground('white');
+                    Body.setcolor_body('black');
+                    self.value ='night';
+                    
+                    Links.link_setcolor('blue')
+                }
+            }
+            
+        </script>
+        <link rel ='stylesheet' href ='style.css'>
     </head>
     <body>
         
@@ -17,19 +57,12 @@
                 document.querySelector('body').style.backgroundColor = 'white';
                 document.querySelector('body').style.color= 'black';        
                 "> -->
-            <input id ='night_day' type = 'button' value="night" onclick ="
-                if(document.querySelector('#night_day').value === 'night'){
-                    document.querySelector('body').style.backgroundColor = 'black';
-                    document.querySelector('body').style.color= 'white';
-                    document.querySelector('#night_day').value ='day';
-                }else{
-                    document.querySelector('body').style.backgroundColor = 'white';
-                    document.querySelector('body').style.color= 'black';   
-                    document.querySelector('#night_day').value ='night';
-                }
-            ">
+                
         <div id ='grid'>           
             <ol>
+                <input  type = 'button' value="night" onclick ="
+                nightonoff(this)
+            ">
                 
                 <li><a href ="1.html">html</a></li>
                 <li><a href ="2.html">css</a></li>
@@ -43,6 +76,8 @@
                 
                 CSS3 이후, CSS 명세의 범위가 엄청나게 넓어짐에 따라 여러 CSS 모듈 사이의 차이도 너무나 커졌습니다. 그래서 이제는 권고안을 모듈별로 개발하고 공개하는 것이 더 효과적인 상황입니다. 이제 W3C는 CSS 명세의 버전을 올리지 않고, 대신 주기적으로 CSS 명세 안정판의 스냅샷을 생성하고 있습니다.</p>
             </div>
+            
+            
       </div>
     </body>
 </html>
