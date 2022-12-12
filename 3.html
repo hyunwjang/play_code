@@ -3,50 +3,10 @@
     <head>
         <title>Web_JaverScript</title>
         <meta charset="utf-8">
-        <script>
-            var Body = {
-                setcolor_body:function(color){
-                    document.querySelector('body').style.color= color;
-                },
-                setbackground:function(color){
-                    document.querySelector('body').style.backgroundColor = color;
-                }
-            }
-            var Links ={
-                link_setcolor: function(color){
-                    var alist = document.querySelectorAll('a');
-                    var i = 0;
-                        while(i < alist.length){
-                            console.log(alist[i]);
-                            alist[i].style.color = color;
-                            i=i+1;
-                        }
-
-                }
-            }
-            function nightonoff(self){
-            var target = document.querySelector('body');
-                if(self.value === 'night'){
-                    Body.setbackground('black');
-                    Body.setcolor_body('white');
-                    self.value ='day';
-
-                    Links.link_setcolor('powderblue');
-                }else{
-                    
-                    Body.setbackground('white');
-                    Body.setcolor_body('black');
-                    self.value ='night';
-                    
-                    Links.link_setcolor('blue')
-                }
-            }
-            
-        </script>
+        <script src = 'color.html'></script>
         <link rel ='stylesheet' href ='style.css'>
     </head>
     <body>
-        
             <h1><a href ="index.html">WEB</a></h1>
             <!-- <input type = 'button' value = 'night' onclick="
                 document.querySelector('body').style.backgroundColor = 'black';
