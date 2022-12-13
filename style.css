@@ -11,6 +11,7 @@ h1{
     border-bottom:1px solid gray;
     margin:0;
     padding: 20px;
+    background-color: rgb(17, 219, 152);
 
 }
 ol{
@@ -29,6 +30,12 @@ ol{
 #grid #article{
     padding-left : 25px;
 }
+#mail{
+    text-align :left;
+    font-size : 5px;
+    color :gray;
+}
+
 @media(max-width:800px){
     #grid{
     display : block;
